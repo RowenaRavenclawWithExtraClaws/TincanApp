@@ -35,8 +35,6 @@ class SetupPage extends StatefulWidget {
 }
 
 class _SetupPageState extends State<SetupPage> {
-  File imgPath = File('ui/assets/images/avatar.png');
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,8 +44,13 @@ class _SetupPageState extends State<SetupPage> {
           children: <Widget>[
             CircleAvatar(
               radius: 50,
-              child: Image(
-                image: AssetImage('assets/images/avatar.png'),
+              child: RaisedButton(
+                child: Icon(
+                  Icons.add_a_photo,
+                  color: Colors.white,
+                ),
+                shape: CircleBorder(),
+                onPressed: () => {},
               ),
             ),
             Text(
