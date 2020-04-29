@@ -1,5 +1,5 @@
 import 'can.dart';
-import 'plays.dart';
+import 'track.dart';
 import 'package:image/image.dart';
 
 class Concert {
@@ -10,7 +10,7 @@ class Concert {
   final Can creator;
   List<Can> admins;
   List<Can> audiance;
-  List<Plays> playbook;
+  List<Track> playbook;
 
   Concert(
       {this.id,

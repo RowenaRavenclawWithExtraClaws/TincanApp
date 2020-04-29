@@ -1,10 +1,10 @@
 import 'can.dart';
-import 'plays.dart';
+import 'track.dart';
 
 class CansPlaybook {
   final String id;
   final List<Can> sides;
-  List<Plays> tracks;
+  List<Track> tracks;
 
   CansPlaybook({this.id, this.sides});
 }
