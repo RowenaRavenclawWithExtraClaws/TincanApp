@@ -15,6 +15,7 @@ class ChatSummaryView extends StatelessWidget {
       child: ListTile(
         leading: CircleAvatar(
           radius: 30.0,
+          backgroundImage: ExactAssetImage('assets/images/avatar.png'),
         ),
         title: Text(
           chatSummaryViewModel.name,

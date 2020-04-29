@@ -1,6 +1,7 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:flutter/src/widgets/image.dart';
 
 class TincanSetupPage extends StatelessWidget {
   @override
@@ -35,6 +36,17 @@ class SetupPage extends StatefulWidget {
 }
 
 class _SetupPageState extends State<SetupPage> {
+  ExactAssetImage _img = ExactAssetImage('assets/images/avatar.png');
+
+  Future getImage() async {
+    File img = await ImagePicker.pickImage(source: ImageSource.gallery);
+    await img.copy('ui/assets/images/userAvatar.png');
+
+    setState(() {
+      _img = ExactAssetImage('assets/images/userAvatar.png');
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,16 +54,12 @@ class _SetupPageState extends State<SetupPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            CircleAvatar(
-              radius: 50,
-              child: RaisedButton(
-                child: Icon(
-                  Icons.add_a_photo,
-                  color: Colors.white,
-                ),
-                shape: CircleBorder(),
-                onPressed: () => {},
+            GestureDetector(
+              child: CircleAvatar(
+                radius: 50,
+                backgroundImage: _img,
               ),
+              onTap: getImage,
             ),
             Text(
               // this widget is used only for spacing between these colmn widgets.

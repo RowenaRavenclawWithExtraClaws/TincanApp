@@ -26,6 +26,7 @@ dependencies:
   pin_code_fields: ^2.5.1
   rxdart: ^0.23.1
   http: ^0.12.0+4
+  image_picker: ^0.6.5+2
 
 dev_dependencies:
   flutter_test:
@@ -38,6 +39,7 @@ dev_dependencies:
 flutter:
   assets:
     - assets/images/avatar.png
+    - assets/images/userAvatar.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
