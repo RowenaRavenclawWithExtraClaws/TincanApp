@@ -3,21 +3,23 @@ import 'track.dart';
 import 'package:image/image.dart';
 
 class Concert {
-  final String id;
+  final int id;
   String name;
   final DateTime dateCreated;
   Image avatar;
   final Can creator;
-  List<Can> admins;
-  List<Can> audiance;
-  List<Track> playbook;
+  List<int> adminIDs;
+  List<int> audianceIDs;
+  List<int> trackIDs;
 
-  Concert(
-      {this.id,
-      this.name,
-      this.dateCreated,
-      this.avatar,
-      this.creator,
-      this.admins,
-      this.audiance});
+  Concert({
+    this.id,
+    this.name,
+    this.dateCreated,
+    this.avatar,
+    this.creator,
+    this.adminIDs,
+    this.audianceIDs,
+    this.trackIDs,
+  });
 }
