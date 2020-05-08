@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:ui/models/chatSummaryModel.dart';
+/*import 'package:flutter/material.dart';
+import 'package:ui/DataLayer/streamSummary.dart';
 
 class ChatSummaryView extends StatelessWidget {
   final Color textUnreadDeepPurpleColor = Colors.deepPurple;
@@ -46,3 +46,4 @@ class ChatSummaryView extends StatelessWidget {
     );
   }
 }
+*/

@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:ui/models/chatSummaryModel.dart';
-import 'package:ui/UI/tincanChatSummaryView.dart';
+/*import 'package:flutter/material.dart';
+import 'package:ui/DataLayer/streamSummary.dart';
+import 'package:ui/UI/streamSummaryView.dart';
 import 'package:ui/DataLayer/chatSummaryResource.dart';
 
 class TincanHomePage extends StatelessWidget {
@@ -112,3 +112,4 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+*/

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ui/Bloc/welcomeToVerifyHandler.dart';
+import 'package:ui/Logic/welcomeToVerify.dart';
 
 class TincanWelcomePage extends StatelessWidget {
   @override
@@ -75,8 +75,8 @@ class _WelcomePageState extends State<WelcomePage> {
                   color: Colors.white,
                 ),
               ),
-              onPressed: () => WelcomeToVerifyHandler.handle(
-                  textFieldController.text, context),
+              onPressed: () => WelcomeToVerify.navigateToVerificationPage(
+                  context, textFieldController.text),
             ),
           ],
         ),

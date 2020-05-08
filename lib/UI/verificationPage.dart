@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
-import 'package:ui/Bloc/verifyHandler.dart';
-import 'package:ui/Bloc/welcomeToVerifyHandler.dart';
-import 'package:ui/models/globals.dart' as globals;
+import 'package:ui/Logic/verifyCode.dart';
+import 'package:ui/Logic/getCode.dart';
+import 'package:ui/Logic/snackBarComposer.dart';
+import 'package:ui/config.dart' as globals;
 
 class TincanVerificationPage extends StatelessWidget {
   @override
@@ -76,7 +77,7 @@ class _VerificationPageState extends State<VerificationPage> {
                 ),
               ),
               onPressed: () =>
-                  VerifyHandler.handle(textFieldController.text, context),
+                  VerifyCode.verify(textFieldController.text, context),
             ),
             RaisedButton(
                 child: Text(
@@ -86,9 +87,8 @@ class _VerificationPageState extends State<VerificationPage> {
                   ),
                 ),
                 onPressed: () {
-                  WelcomeToVerifyHandler.getCode(globals.phoneNumber);
-                  WelcomeToVerifyHandler.composeSnackBar(
-                      globals.messege4, context);
+                  GetCode.getCode(globals.phoneNumber);
+                  SnackBarComposer.composeSnackBar(globals.messege4, context);
                 }),
           ],
         ),

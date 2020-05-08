@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ui/UI/tincanHomePage.dart';
-//import 'package:ui/src/pages/tincanHomePage.dart';
-//import 'package:ui/src/pages/tincanSetupPage.dart';
+import 'package:ui/UI/welcomePage.dart';
 
-void main() => runApp(TincanHomePage());
+void main() => runApp(TincanWelcomePage());

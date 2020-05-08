@@ -1,7 +1,7 @@
 // all global variables should be stored here.
 String phoneNumber = '';
 String verificationCode = '';
-String serverAddress = '192.168.1.4';
+String serverAddress = '192.168.1.3';
 String portNumber = '8000';
 String messege1 = 'invalid phone number, try again';
 String messege2 = 'invalid verification code, try again';
