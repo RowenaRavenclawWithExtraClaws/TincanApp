@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ui/src/models/globals.dart' as globals;
+import 'package:ui/models/globals.dart' as globals;
 
 class VerifyHandler {
   static bool validateCode(String code) {

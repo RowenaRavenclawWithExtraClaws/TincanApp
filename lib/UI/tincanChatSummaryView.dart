@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ui/src/models/chatSummaryModel.dart';
+import 'package:ui/models/chatSummaryModel.dart';
 
 class ChatSummaryView extends StatelessWidget {
   final Color textUnreadDeepPurpleColor = Colors.deepPurple;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ui/src/models/chatSummaryModel.dart';
-import 'package:ui/src/pages/tincanChatSummaryView.dart';
-import 'package:ui/src/resources/chatSummaryResource.dart';
+import 'package:ui/models/chatSummaryModel.dart';
+import 'package:ui/UI/tincanChatSummaryView.dart';
+import 'package:ui/DataLayer/chatSummaryResource.dart';
 
 class TincanHomePage extends StatelessWidget {
   @override

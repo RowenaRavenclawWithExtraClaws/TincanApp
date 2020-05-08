@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pin_code_fields/pin_code_fields.dart';
-import 'package:ui/src/blocs/verifyHandler.dart';
-import 'package:ui/src/blocs/welcomeToVerifyHandler.dart';
-import 'package:ui/src/models/globals.dart' as globals;
+import 'package:ui/Bloc/welcomeToVerifyHandler.dart';
 
-class TincanVerificationPage extends StatelessWidget {
+class TincanWelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,18 +12,18 @@ class TincanVerificationPage extends StatelessWidget {
         primarySwatch: Colors.deepPurple,
       ),
       home: Scaffold(
-        body: VerificationPage(),
+        body: WelcomePage(),
       ),
     );
   }
 }
 
-class VerificationPage extends StatefulWidget {
+class WelcomePage extends StatefulWidget {
   @override
-  _VerificationPageState createState() => _VerificationPageState();
+  _WelcomePageState createState() => _WelcomePageState();
 }
 
-class _VerificationPageState extends State<VerificationPage> {
+class _WelcomePageState extends State<WelcomePage> {
   final textFieldController = TextEditingController();
 
   @override
@@ -51,45 +48,36 @@ class _VerificationPageState extends State<VerificationPage> {
               ),
             ),
             Text(
+              // this widget is used only for spacing between these colmn widgets.
               '\n\n\n\n\n\n\n\n\n\n',
             ),
             Container(
               width: 300.0,
-              child: PinCodeTextField(
-                length: 6,
-                animationType: AnimationType.scale,
-                shape: PinCodeFieldShape.circle,
-                activeColor: Colors.deepPurple,
-                inactiveColor: Colors.black,
+              child: TextField(
+                maxLength: 13,
+                textAlign: TextAlign.center,
+                cursorColor: Colors.deepPurple,
+                keyboardType: TextInputType.phone,
                 controller: textFieldController,
-                onChanged: (value) => {},
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Phone number',
+                ),
+                style: TextStyle(
+                  color: Colors.deepPurple,
+                ),
               ),
-            ),
-            Text(
-              '\n',
             ),
             RaisedButton(
               child: Text(
-                'Verify',
+                'Proceed',
                 style: TextStyle(
                   color: Colors.white,
                 ),
               ),
-              onPressed: () =>
-                  VerifyHandler.handle(textFieldController.text, context),
+              onPressed: () => WelcomeToVerifyHandler.handle(
+                  textFieldController.text, context),
             ),
-            RaisedButton(
-                child: Text(
-                  'Re-send',
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
-                onPressed: () {
-                  WelcomeToVerifyHandler.getCode(globals.phoneNumber);
-                  WelcomeToVerifyHandler.composeSnackBar(
-                      globals.messege4, context);
-                }),
           ],
         ),
       ),

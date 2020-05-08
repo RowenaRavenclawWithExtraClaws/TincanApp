@@ -1,4 +1,4 @@
-import 'package:ui/src/models/chatSummaryModel.dart';
+import 'package:ui/models/chatSummaryModel.dart';
 
 class Chats {
   final List<ChatSummaryViewModel> chatSummaryViewModels = [

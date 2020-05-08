@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:ui/src/pages/tincanVerificationPage.dart';
-import 'package:ui/src/models/globals.dart' as globals;
+import 'package:ui/UI/tincanVerificationPage.dart';
+import 'package:ui/models/globals.dart' as globals;
 
 class WelcomeToVerifyHandler {
   static String phoneNumber;
