@@ -15,7 +15,7 @@ class WelcomeToVerify {
 
       Navigate.navigateTo(context, TincanVerificationPage());
     } else {
-      SnackBarComposer.composeSnackBar(globals.messege1, context);
+      SnackBarComposer.composeSnackBar(globals.messeges[0], context);
     }
   }
 }

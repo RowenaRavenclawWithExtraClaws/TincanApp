@@ -88,7 +88,8 @@ class _VerificationPageState extends State<VerificationPage> {
                 ),
                 onPressed: () {
                   GetCode.getCode(globals.phoneNumber);
-                  SnackBarComposer.composeSnackBar(globals.messege4, context);
+                  SnackBarComposer.composeSnackBar(
+                      globals.messeges[3], context);
                 }),
           ],
         ),

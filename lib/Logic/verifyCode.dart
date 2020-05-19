@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ui/Logic/navigate.dart';
+import 'package:ui/Logic/setupOrHome.dart';
 import 'package:ui/Logic/snackBarComposer.dart';
 import 'package:ui/config.dart' as globals;
 
@@ -26,12 +26,12 @@ class VerifyCode {
   static void verify(String code, BuildContext context) {
     if (validateCode(code)) {
       if (authenticateCode(code)) {
-        //navigate to either the setup page or the cans page
+        SetupOrHome.setupOrHome(context);
       } else {
-        SnackBarComposer.composeSnackBar(globals.messege3, context);
+        SnackBarComposer.composeSnackBar(globals.messeges[2], context);
       }
     } else {
-      SnackBarComposer.composeSnackBar(globals.messege2, context);
+      SnackBarComposer.composeSnackBar(globals.messeges[1], context);
     }
   }
 }

@@ -1,7 +1,9 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:flutter/src/widgets/image.dart';
+//import 'package:ui/Logic/fileHandler.dart';
+import 'package:ui/config.dart' as globals;
+import 'package:ui/Logic/setupToHome.dart';
+import 'dart:io';
 
 class TincanSetupPage extends StatelessWidget {
   @override
@@ -36,19 +38,20 @@ class SetupPage extends StatefulWidget {
 }
 
 class _SetupPageState extends State<SetupPage> {
-  ExactAssetImage _img = ExactAssetImage('assets/images/avatar.png');
+  File _img;
 
   Future getImage() async {
-    File img = await ImagePicker.pickImage(source: ImageSource.gallery);
-    await img.copy('ui/assets/images/userAvatar.png');
+    var image = await ImagePicker.pickImage(source: ImageSource.gallery);
 
     setState(() {
-      _img = ExactAssetImage('assets/images/userAvatar.png');
+      _img = image;
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    final textFieldController = TextEditingController();
+
     return Scaffold(
       body: Center(
         child: Column(
@@ -57,7 +60,8 @@ class _SetupPageState extends State<SetupPage> {
             GestureDetector(
               child: CircleAvatar(
                 radius: 50,
-                backgroundImage: _img,
+                backgroundImage: ExactAssetImage('assets/images/avatar.png'),
+                child: _img == null ? Text('') : Image.file(_img),
               ),
               onTap: getImage,
             ),
@@ -75,6 +79,7 @@ class _SetupPageState extends State<SetupPage> {
                   color: Colors.deepPurple,
                   fontSize: 26,
                 ),
+                controller: textFieldController,
               ),
             ),
             RaisedButton(
@@ -84,7 +89,8 @@ class _SetupPageState extends State<SetupPage> {
                   color: Colors.white,
                 ),
               ),
-              onPressed: () => {},
+              onPressed: () => SetupToHome.registerCan(
+                  globals.phoneNumber, textFieldController.text, _img),
             )
           ],
         ),

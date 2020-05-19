@@ -1,9 +1,15 @@
 // all global variables should be stored here.
 String phoneNumber = '';
+String canName = '';
+String avatar = '';
 String verificationCode = '';
-String serverAddress = '192.168.1.3';
-String portNumber = '8000';
-String messege1 = 'invalid phone number, try again';
-String messege2 = 'invalid verification code, try again';
-String messege3 = 'wrong verification code, try again';
-String messege4 = 'your verification code will be resent shortly';
+bool logged = false;
+String serverAddress = '192.168.1.2';
+List<String> portNumbers = ['8000', '8001', '8002', '8003'];
+List<String> routes = ['getCode', 'addCan', 'findCan', 'fetchCans'];
+List<String> messeges = [
+  'invalid phone number, try again',
+  'invalid verification code, try again',
+  'wrong verification code, try again',
+  'your verification code will be resent shortly'
+];

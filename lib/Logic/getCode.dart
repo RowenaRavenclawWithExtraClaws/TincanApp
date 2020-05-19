@@ -5,7 +5,12 @@ class GetCode {
   static getCode(String phoneNumber) async {
     final response = await http.post(
       // this can vary according to the server and the machine.
-      'http://' + globals.serverAddress + ':' + globals.portNumber + '/',
+      'http://' +
+          globals.serverAddress +
+          ':' +
+          globals.portNumbers[0] +
+          '/' +
+          globals.routes[0],
       body: phoneNumber,
     );
 
