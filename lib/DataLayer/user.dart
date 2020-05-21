@@ -10,11 +10,12 @@ class User {
   final List<Concert> concerts;
   final List<Party> parties;
 
-  User(
-      {this.phone,
-      this.name,
-      this.avatar,
-      this.friends,
-      this.concerts,
-      this.parties});
+  User({
+    this.phone,
+    this.name,
+    this.avatar,
+    this.friends,
+    this.concerts,
+    this.parties,
+  });
 }
