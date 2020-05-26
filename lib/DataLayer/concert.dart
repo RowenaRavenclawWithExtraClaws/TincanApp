@@ -1,13 +1,13 @@
 import 'package:ui/DataLayer/track.dart';
-import 'package:ui/DataLayer/can.dart';
+import 'package:ui/DataLayer/user.dart';
 
 class Concert {
   final String name;
   final String avatar;
   final DateTime dateCreated;
-  final Can creator;
-  final Can admin;
-  final List<Track> playbook;
+  final User creator;
+  final User admin;
+  List<Track> playbook = [];
 
   Concert({
     this.name,

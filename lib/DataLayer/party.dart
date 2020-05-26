@@ -1,13 +1,13 @@
 import 'package:ui/DataLayer/track.dart';
-import 'package:ui/DataLayer/can.dart';
+import 'package:ui/DataLayer/user.dart';
 
 class Party {
   final String name;
   final String avatar;
   final DateTime dateCreated;
-  final Can creator;
-  final List<Can> admins;
-  final List<Track> playbook;
+  final User creator;
+  List<User> admins = [];
+  List<Track> playbook = [];
 
   Party({
     this.name,

@@ -6,16 +6,20 @@ class User {
   final String phone;
   final String name;
   final String avatar;
-  final List<Friend> friends;
-  final List<Concert> concerts;
-  final List<Party> parties;
+  List<Friend> friends = [];
+  List<Concert> concerts = [];
+  List<Party> parties = [];
 
   User({
     this.phone,
     this.name,
     this.avatar,
-    this.friends,
-    this.concerts,
-    this.parties,
   });
+
+  Map toJson(String extention) => {
+        "phone": this.phone,
+        "name": this.name,
+        "avatar": this.avatar,
+        "extention": extention
+      };
 }
