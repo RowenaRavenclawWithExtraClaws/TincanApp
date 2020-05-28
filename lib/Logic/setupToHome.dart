@@ -2,9 +2,10 @@ import 'package:ui/DataLayer/user.dart';
 import 'dart:io';
 import 'dart:convert';
 import 'package:ui/Logic/query.dart';
+import 'package:ui/Logic/getPhoneList.dart';
 
 class SetupToHome {
-  static void registerCan(
+  static Future<void> registerCan(
       String userPhone, String userName, File userAvatar) async {
     User user = new User(
         phone: userPhone,
@@ -16,6 +17,10 @@ class SetupToHome {
 
     await Query.addUser(user, extention);
 
-    // do something.
+    String phoneList = await GetPhoneList.getPhoneList();
+
+    await Query.addFriends(phoneList);
+
+    return;
   }
 }

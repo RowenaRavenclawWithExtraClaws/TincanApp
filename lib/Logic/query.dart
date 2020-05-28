@@ -14,6 +14,8 @@ class Query {
         phoneNumber);
 
     if (response.statusCode == 404) return false;
+
+    saveUserLocally(response.body);
     return true;
   }
 
@@ -26,5 +28,24 @@ class Query {
             '/' +
             globals.routes[1],
         body: user.toJson(extention));
+
+    return;
+  }
+
+  static Future<void> addFriends(String phoneList) async {
+    await http.post(
+        'http://' +
+            globals.serverAddress +
+            ':' +
+            globals.portNumbers[5] +
+            '/' +
+            globals.routes[5],
+        body: {"phone": globals.phoneNumber, "phones": phoneList});
+
+    return;
+  }
+
+  static Future<void> saveUserLocally(user) async {
+    return;
   }
 }
