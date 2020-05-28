@@ -28,6 +28,8 @@
 .packages
 .pub-cache/
 .pub/
+.yaml
+.lock
 /build/
 
 # Web related
