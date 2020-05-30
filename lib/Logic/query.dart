@@ -1,6 +1,9 @@
 import 'package:http/http.dart' as http;
 import 'package:ui/config.dart' as globals;
 import 'package:ui/DataLayer/user.dart';
+import 'dart:io';
+import 'package:ui/Logic/fileHandler.dart';
+import 'package:hive/hive.dart';
 
 class Query {
   static Future<bool> findUser(String phoneNumber) async {
@@ -15,7 +18,6 @@ class Query {
 
     if (response.statusCode == 404) return false;
 
-    saveUserLocally(response.body);
     return true;
   }
 
@@ -45,7 +47,14 @@ class Query {
     return;
   }
 
-  static Future<void> saveUserLocally(user) async {
+  static Future<void> saveUserLocally(
+      User user, File avatarImg, String fileName) async {
+    await FileHandler.writeImg(avatarImg, fileName);
+
+    var userBox = Hive.box('users');
+
+    userBox.add(user);
+
     return;
   }
 }

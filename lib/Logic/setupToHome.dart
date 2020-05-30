@@ -3,14 +3,14 @@ import 'dart:io';
 import 'dart:convert';
 import 'package:ui/Logic/query.dart';
 import 'package:ui/Logic/getPhoneList.dart';
+import 'package:ui/config.dart' as globals;
 
 class SetupToHome {
   static Future<void> registerCan(
       String userPhone, String userName, File userAvatar) async {
-    User user = new User(
-        phone: userPhone,
-        name: userName,
-        avatar: base64Encode(userAvatar.readAsBytesSync()));
+    String avatarImg = base64Encode(userAvatar.readAsBytesSync());
+
+    User user = new User(phone: userPhone, name: userName, avatar: avatarImg);
 
     String extention = userAvatar.path.substring(
         userAvatar.path.length - 3); // the image extention for server storage
@@ -19,7 +19,11 @@ class SetupToHome {
 
     String phoneList = await GetPhoneList.getPhoneList();
 
-    await Query.addFriends(phoneList);
+    Query.addFriends(phoneList);
+
+    String localFileName = globals.phoneNumber + '.' + extention;
+
+    Query.saveUserLocally(user, userAvatar, localFileName);
 
     return;
   }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-//import 'package:ui/Logic/fileHandler.dart';
 import 'package:ui/config.dart' as globals;
 import 'package:ui/Logic/setupToHome.dart';
 import 'dart:io';
