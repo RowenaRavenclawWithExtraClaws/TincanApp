@@ -1,7 +1,7 @@
 import 'package:ui/DataLayer/user.dart';
 import 'dart:io';
 import 'dart:convert';
-import 'package:ui/Logic/query.dart';
+import 'package:ui/Logic/cloud.dart';
 import 'package:ui/Logic/getPhoneList.dart';
 import 'package:ui/config.dart' as globals;
 

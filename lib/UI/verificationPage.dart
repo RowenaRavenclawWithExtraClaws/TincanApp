@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:ui/Logic/verifyCode.dart';
 import 'package:ui/Logic/getCode.dart';
-import 'package:ui/Logic/snackBarComposer.dart';
+import 'package:ui/Logic/uiComposer.dart';
 import 'package:ui/config.dart' as globals;
 
 class TincanVerificationPage extends StatelessWidget {
@@ -88,8 +88,7 @@ class _VerificationPageState extends State<VerificationPage> {
                 ),
                 onPressed: () {
                   GetCode.getCode(globals.phoneNumber);
-                  SnackBarComposer.composeSnackBar(
-                      globals.messeges[3], context);
+                  UIComposer.composeSnackBar(globals.messeges[3], context);
                 }),
           ],
         ),

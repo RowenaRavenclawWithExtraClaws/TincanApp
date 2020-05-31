@@ -9,4 +9,8 @@ class Navigate {
       ),
     );
   }
+
+  static navigateBack(BuildContext context) {
+    Navigator.pop(context);
+  }
 }

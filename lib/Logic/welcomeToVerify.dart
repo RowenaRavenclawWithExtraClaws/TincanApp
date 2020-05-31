@@ -3,7 +3,7 @@ import 'package:ui/UI/verificationPage.dart';
 import 'package:ui/Logic/verifyPhone.dart';
 import 'package:ui/Logic/getCode.dart';
 import 'package:ui/Logic/navigate.dart';
-import 'package:ui/Logic/snackBarComposer.dart';
+import 'package:ui/Logic/uiComposer.dart';
 import 'package:ui/config.dart' as globals;
 
 class WelcomeToVerify {
@@ -15,7 +15,7 @@ class WelcomeToVerify {
 
       Navigate.navigateTo(context, TincanVerificationPage());
     } else {
-      SnackBarComposer.composeSnackBar(globals.messeges[0], context);
+      UIComposer.composeSnackBar(globals.messeges[0], context);
     }
   }
 }

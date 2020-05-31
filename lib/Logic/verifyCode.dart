@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui/Logic/setupOrHome.dart';
-import 'package:ui/Logic/snackBarComposer.dart';
+import 'package:ui/Logic/uiComposer.dart';
 import 'package:ui/config.dart' as globals;
 
 class VerifyCode {
@@ -28,10 +28,10 @@ class VerifyCode {
       if (authenticateCode(code)) {
         SetupOrHome.setupOrHome(context);
       } else {
-        SnackBarComposer.composeSnackBar(globals.messeges[2], context);
+        UIComposer.composeSnackBar(globals.messeges[2], context);
       }
     } else {
-      SnackBarComposer.composeSnackBar(globals.messeges[1], context);
+      UIComposer.composeSnackBar(globals.messeges[1], context);
     }
   }
 }

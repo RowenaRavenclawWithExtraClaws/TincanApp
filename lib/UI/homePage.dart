@@ -1,7 +1,6 @@
-/*import 'package:flutter/material.dart';
-import 'package:ui/DataLayer/streamSummary.dart';
-import 'package:ui/UI/streamSummaryView.dart';
-import 'package:ui/DataLayer/chatSummaryResource.dart';
+import 'package:flutter/material.dart';
+import 'package:ui/UI/contactsPage.dart';
+import 'package:ui/Logic/navigate.dart';
 
 class TincanHomePage extends StatelessWidget {
   @override
@@ -54,9 +53,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final List<ChatSummaryViewModel> chatSummaryViewModel =
-      Chats().chatSummaryViewModels;
-
   int selectedIndx = 0;
 
   void onItemTapped(int indx) {
@@ -88,28 +84,10 @@ class _HomePageState extends State<HomePage> {
         currentIndex: selectedIndx,
         onTap: onItemTapped,
       ),
-      body: buildChatList(),
-    );
-  }
-
-  Widget buildChatList() {
-    return SafeArea(
-      child: ListView.separated(
-        itemCount: chatSummaryViewModel.length,
-        separatorBuilder: (BuildContext context, int index) => buildDivider(),
-        itemBuilder: (BuildContext context, int index) {
-          return ChatSummaryView(chatSummaryViewModel[index]);
-        },
+      floatingActionButton: FloatingActionButton(
+        onPressed: Navigate.navigateTo(context, TincanContactsPage()),
       ),
-    );
-  }
-
-  Widget buildDivider() {
-    return Divider(
-      height: 0.0,
-      indent: 95.0,
-      endIndent: 10.0,
+      body: Scaffold(),
     );
   }
 }
-*/

@@ -1,5 +1,5 @@
 import 'package:hive/hive.dart';
-import 'package:ui/DataLayer/friends.dart';
+import 'package:ui/DataLayer/friend.dart';
 import 'package:ui/DataLayer/concert.dart';
 import 'package:ui/DataLayer/party.dart';
 

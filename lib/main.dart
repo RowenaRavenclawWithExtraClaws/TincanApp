@@ -11,5 +11,5 @@ void main() async {
 
   Hive.init(appDir);
   Hive.registerAdapter(UserAdapter());
-  Hive.openBox('users');
+  Hive.openBox('user');
 }
