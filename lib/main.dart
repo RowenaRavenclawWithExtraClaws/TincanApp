@@ -3,6 +3,8 @@ import 'package:ui/UI/welcomePage.dart';
 import 'package:ui/Logic/fileHandler.dart';
 import 'package:hive/hive.dart';
 import 'package:ui/DataLayer/user.dart';
+import 'package:ui/DataLayer/friend.dart';
+import 'package:ui/DataLayer/track.dart';
 
 void main() async {
   runApp(TincanWelcomePage());
@@ -11,5 +13,7 @@ void main() async {
 
   Hive.init(appDir);
   Hive.registerAdapter(UserAdapter());
+  Hive.registerAdapter(FriendAdapter());
+  Hive.registerAdapter(TrackAdapter());
   Hive.openBox('user');
 }

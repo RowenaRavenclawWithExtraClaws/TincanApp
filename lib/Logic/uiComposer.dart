@@ -28,7 +28,7 @@ class UIComposer {
   }
 
   static Widget composeListWidget() {
-    List friendList = Query.getFriends();
+    List friendList = LocalQuery.getFriends();
 
     friendList = friendList
         .map((friend) async => new FriendItem(

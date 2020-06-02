@@ -37,4 +37,21 @@ class User {
         "avatar": this.avatar,
         "extention": extention
       };
+
+  static User userFromMap(Map<String, dynamic> jsonObj) {
+    User user = new User(
+        avatar: jsonObj['avatar'],
+        name: jsonObj['name'],
+        phone: jsonObj['phone']);
+
+    Friend friend;
+
+    for (dynamic friendItem in jsonObj['friends']) {
+      friend = Friend.friendFromMap(friendItem);
+
+      user.friends.add(friend);
+    }
+
+    return user;
+  }
 }

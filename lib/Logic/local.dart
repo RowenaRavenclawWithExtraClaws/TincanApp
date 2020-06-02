@@ -1,8 +1,15 @@
 import 'package:hive/hive.dart';
 import 'package:ui/DataLayer/user.dart';
+import 'package:ui/Logic/cloud.dart';
 
-class Query {
+class LocalQuery {
   static Box userBox = Hive.box('user');
+
+  static void saveUser() {
+    userBox.add(CloudQuery.user);
+
+    return;
+  }
 
   static User getUser() {
     final user = userBox.get(0);

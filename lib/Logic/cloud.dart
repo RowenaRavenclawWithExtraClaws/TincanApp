@@ -3,9 +3,12 @@ import 'package:ui/config.dart' as globals;
 import 'package:ui/DataLayer/user.dart';
 import 'dart:io';
 import 'package:ui/Logic/fileHandler.dart';
-import 'package:hive/hive.dart';
+import 'dart:convert';
+import 'package:ui/Logic/local.dart';
 
-class Query {
+class CloudQuery {
+  static User user;
+
   static Future<bool> findUser(String phoneNumber) async {
     final response = await http.get('http://' +
         globals.serverAddress +
@@ -17,6 +20,12 @@ class Query {
         phoneNumber);
 
     if (response.statusCode == 404) return false;
+
+    Map<String, dynamic> userJson = jsonDecode(response.body);
+
+    user = User.userFromMap(userJson);
+
+    LocalQuery.saveUser();
 
     return true;
   }
@@ -43,17 +52,6 @@ class Query {
             '/' +
             globals.routes[5],
         body: {"phone": globals.phoneNumber, "phones": phoneList});
-
-    return;
-  }
-
-  static Future<void> saveUserLocally(
-      User user, File avatarImg, String fileName) async {
-    await FileHandler.writeImg(avatarImg, fileName);
-
-    var userBox = Hive.box('users');
-
-    userBox.add(user);
 
     return;
   }

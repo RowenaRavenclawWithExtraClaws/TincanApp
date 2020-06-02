@@ -6,7 +6,7 @@ import 'package:ui/UI/setupPage.dart';
 
 class SetupOrHome {
   static Future<void> setupOrHome(BuildContext context) async {
-    bool found = await Query.findUser(globals.phoneNumber);
+    bool found = await CloudQuery.findUser(globals.phoneNumber);
     if (found) {
       Navigate.navigateTo(context, TincanSetupPage());
     } else {

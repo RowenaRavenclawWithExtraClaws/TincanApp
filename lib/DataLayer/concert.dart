@@ -9,12 +9,11 @@ class Concert {
   final User admin;
   List<Track> playbook = [];
 
-  Concert({
-    this.name,
-    this.avatar,
-    this.dateCreated,
-    this.creator,
-    this.admin,
-    this.playbook,
-  });
+  Concert(
+      {this.name,
+      this.avatar,
+      this.dateCreated,
+      this.creator,
+      this.admin,
+      this.playbook});
 }

@@ -2,8 +2,8 @@ import 'package:ui/DataLayer/user.dart';
 import 'dart:io';
 import 'dart:convert';
 import 'package:ui/Logic/cloud.dart';
+import 'package:ui/Logic/local.dart';
 import 'package:ui/Logic/getPhoneList.dart';
-import 'package:ui/config.dart' as globals;
 
 class SetupToHome {
   static Future<void> registerCan(
@@ -15,15 +15,13 @@ class SetupToHome {
     String extention = userAvatar.path.substring(
         userAvatar.path.length - 3); // the image extention for server storage
 
-    await Query.addUser(user, extention);
+    await CloudQuery.addUser(user, extention);
 
     String phoneList = await GetPhoneList.getPhoneList();
 
-    Query.addFriends(phoneList);
+    CloudQuery.addFriends(phoneList);
 
-    String localFileName = globals.phoneNumber + '.' + extention;
-
-    Query.saveUserLocally(user, userAvatar, localFileName);
+    LocalQuery.saveUser();
 
     return;
   }
