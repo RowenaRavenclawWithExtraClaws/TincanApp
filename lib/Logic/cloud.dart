@@ -25,7 +25,7 @@ class CloudQuery {
 
     user = User.userFromMap(userJson);
 
-    LocalQuery.saveUser();
+    // in normal usage of the app, this function should save the new user locally
 
     return true;
   }

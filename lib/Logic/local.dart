@@ -23,4 +23,15 @@ class LocalQuery {
 
     return friendList;
   }
+
+  static List<String> getPhones() {
+    final user = getUser();
+    List<String> phones = [];
+
+    phones.add(user.phone);
+
+    user.friends.map((friend) => phones.add(friend.phone)).toList();
+
+    return phones;
+  }
 }
