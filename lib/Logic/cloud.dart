@@ -55,4 +55,19 @@ class CloudQuery {
 
     return;
   }
+
+  static Future<void> fetchAvatars() async {
+    List<String> avatarNames = LocalQuery.getAvatarNames();
+
+    final response = await http.post(
+        'http://' +
+            globals.serverAddress +
+            ':' +
+            globals.portNumbers[6] +
+            '/' +
+            globals.routes[6],
+        body: json.encode(avatarNames));
+
+    print(response.body);
+  }
 }

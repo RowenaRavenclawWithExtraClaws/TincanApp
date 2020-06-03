@@ -10,7 +10,7 @@ class SetupOrHome {
     bool found = await CloudQuery.findUser(globals.phoneNumber);
 
     if (found) {
-      print(LocalQuery.getPhones());
+      CloudQuery.fetchAvatars();
     } else {
       Navigate.navigateTo(context, TincanSetupPage());
     }

@@ -24,14 +24,14 @@ class LocalQuery {
     return friendList;
   }
 
-  static List<String> getPhones() {
+  static List<String> getAvatarNames() {
     final user = getUser();
-    List<String> phones = [];
+    List<String> avatarNames = [];
 
-    phones.add(user.phone);
+    avatarNames.add(user.avatar);
 
-    user.friends.map((friend) => phones.add(friend.phone)).toList();
+    user.friends.map((friend) => avatarNames.add(friend.avatarPath)).toList();
 
-    return phones;
+    return avatarNames;
   }
 }
