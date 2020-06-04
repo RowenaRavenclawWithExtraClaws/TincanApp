@@ -32,7 +32,7 @@ class UIComposer {
 
     friendList = friendList
         .map((friend) async => new FriendItem(
-            avatarPath: await FileHandler.localPath + friend.avatarPath,
+            avatarPath: '${await FileHandler.localPath}/${friend.avatarPath}',
             friendName: friend.name))
         .toList();
 

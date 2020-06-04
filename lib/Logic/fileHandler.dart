@@ -13,7 +13,7 @@ class FileHandler {
   static Future<File> localFile(String fileName) async {
     final path = await localPath;
 
-    return File(path + '/' + fileName);
+    return File('$path/$fileName');
   }
 
   static Future<void> createDir(String dirName) async {
@@ -29,7 +29,7 @@ class FileHandler {
 
   static Future<File> writeImg(File img, String fileName) async {
     final path = await localPath;
-    File copiedFile = await img.copy(path + '/' + fileName);
+    File copiedFile = await img.copy('$path/$fileName');
 
     return copiedFile;
   }
