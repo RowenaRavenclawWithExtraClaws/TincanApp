@@ -37,7 +37,8 @@ class FileHandler {
   }
 
   static Future<FileImage> readImg(String fileName) async {
-    final file = await localFile(fileName);
+    final appDir = await localPath;
+    final file = await localFile('$appDir/$fileName');
 
     return FileImage(file);
   }

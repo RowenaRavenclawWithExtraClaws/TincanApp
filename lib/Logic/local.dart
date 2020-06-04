@@ -1,10 +1,8 @@
-import 'dart:typed_data';
 import 'package:hive/hive.dart';
 import 'package:ui/DataLayer/user.dart';
 import 'package:ui/Logic/cloud.dart';
 import 'package:ui/Logic/fileHandler.dart';
 import 'dart:convert';
-import 'dart:io';
 
 class LocalQuery {
   static Box userBox = Hive.box('user');
