@@ -16,4 +16,7 @@ void main() async {
   Hive.registerAdapter(FriendAdapter());
   Hive.registerAdapter(TrackAdapter());
   Hive.openBox('user');
+
+  FileHandler.createDir('avatars');
+  FileHandler.createDir('avatars/users');
 }

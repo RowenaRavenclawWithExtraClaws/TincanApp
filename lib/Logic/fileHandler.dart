@@ -16,6 +16,17 @@ class FileHandler {
     return File(path + '/' + fileName);
   }
 
+  static Future<void> createDir(String dirName) async {
+    final appDir = await localPath;
+    final dir = Directory('$appDir/$dirName');
+
+    if (await dir.exists()) return;
+
+    dir.createSync(recursive: true);
+
+    return;
+  }
+
   static Future<File> writeImg(File img, String fileName) async {
     final path = await localPath;
     File copiedFile = await img.copy(path + '/' + fileName);
