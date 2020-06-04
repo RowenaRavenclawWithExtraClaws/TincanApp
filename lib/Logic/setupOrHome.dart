@@ -10,7 +10,9 @@ class SetupOrHome {
     bool found = await CloudQuery.findUser(globals.phoneNumber);
 
     if (found) {
-      CloudQuery.fetchAvatars();
+      Map<dynamic, dynamic> x = await CloudQuery.fetchAvatars();
+      LocalQuery.saveAvatarImages(x, 'avatars/users');
+      print('done');
     } else {
       Navigate.navigateTo(context, TincanSetupPage());
     }

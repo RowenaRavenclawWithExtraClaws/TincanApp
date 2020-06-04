@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:io';
+import 'dart:typed_data';
 import 'package:flutter/rendering.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -22,16 +23,17 @@ class FileHandler {
 
     if (await dir.exists()) return;
 
-    dir.createSync(recursive: true);
+    dir.create(recursive: true);
 
     return;
   }
 
-  static Future<File> writeImg(File img, String fileName) async {
-    final path = await localPath;
-    File copiedFile = await img.copy('$path/$fileName');
+  static Future<void> saveImg(dynamic fileName, dynamic content) async {
+    File file = await FileHandler.localFile(fileName);
 
-    return copiedFile;
+    file.writeAsBytes(content);
+
+    return;
   }
 
   static Future<FileImage> readImg(String fileName) async {
