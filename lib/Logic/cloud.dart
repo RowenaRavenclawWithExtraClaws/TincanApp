@@ -38,7 +38,7 @@ class CloudQuery {
     return;
   }
 
-  static Future<List<dynamic>> fetchAvatars() async {
+  static Future<dynamic> fetchAvatars() async {
     List<String> avatarNames = LocalQuery.getAvatarNames();
 
     final response = await http.post(
