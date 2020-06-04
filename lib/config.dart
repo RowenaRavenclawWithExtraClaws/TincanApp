@@ -4,7 +4,7 @@ String canName = '';
 String avatar = '';
 String verificationCode = '';
 bool logged = false;
-String serverAddress = '192.168.1.7';
+String serverAddress = '192.168.1.5';
 List<String> portNumbers = [
   '8009',
   '8010',

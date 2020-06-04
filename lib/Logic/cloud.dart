@@ -1,8 +1,6 @@
 import 'package:http/http.dart' as http;
 import 'package:ui/config.dart' as globals;
 import 'package:ui/DataLayer/user.dart';
-import 'dart:io';
-import 'package:ui/Logic/fileHandler.dart';
 import 'dart:convert';
 import 'package:ui/Logic/local.dart';
 
@@ -56,7 +54,7 @@ class CloudQuery {
     return;
   }
 
-  static Future<void> fetchAvatars() async {
+  static Future<List<dynamic>> fetchAvatars() async {
     List<String> avatarNames = LocalQuery.getAvatarNames();
 
     final response = await http.post(
@@ -68,6 +66,6 @@ class CloudQuery {
             globals.routes[6],
         body: json.encode(avatarNames));
 
-    print(response.body);
+    return json.decode(response.body);
   }
 }
