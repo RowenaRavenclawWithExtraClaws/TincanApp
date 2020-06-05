@@ -20,7 +20,7 @@ class TincanContactsPage extends StatelessWidget {
             onPressed: () => Navigate.navigateBack(context),
           ),
           title: Text(
-            'Tincan',
+            'Friends',
             style: TextStyle(
               fontSize: 25.0,
               color: Colors.deepPurple,

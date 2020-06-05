@@ -68,15 +68,15 @@ class _HomePageState extends State<HomePage> {
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.music_note),
-            title: Text('Cans'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.surround_sound),
-            title: Text('Parties'),
+            title: Text('Friends'),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.mic),
             title: Text('Concerts'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.surround_sound),
+            title: Text('Parties'),
           ),
         ],
         backgroundColor: Colors.white,
@@ -85,6 +85,7 @@ class _HomePageState extends State<HomePage> {
         onTap: onItemTapped,
       ),
       floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
         onPressed: () => Navigate.navigateTo(context, TincanContactsPage()),
       ),
       body: Scaffold(),
