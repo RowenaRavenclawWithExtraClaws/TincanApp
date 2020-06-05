@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ui/UI/welcomePage.dart';
+import 'package:ui/UI/homePage.dart';
 import 'package:ui/Logic/fileHandler.dart';
 import 'package:hive/hive.dart';
 import 'package:ui/DataLayer/user.dart';
@@ -7,7 +7,7 @@ import 'package:ui/DataLayer/friend.dart';
 import 'package:ui/DataLayer/track.dart';
 
 void main() async {
-  runApp(TincanWelcomePage());
+  runApp(TincanHomePage());
 
   final appDir = await FileHandler.localPath;
 

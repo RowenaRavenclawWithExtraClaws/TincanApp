@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:ui/DataLayer/listItem.dart';
-import 'dart:io';
 
 class FriendItemView {
   final Color textUnreadDeepPurpleColor = Colors.deepPurple;
@@ -16,7 +15,7 @@ class FriendItemView {
       child: ListTile(
         leading: CircleAvatar(
           radius: 30.0,
-          backgroundImage: FileImage(File(_friendItem.avatarPath)),
+          backgroundImage: FileImage(_friendItem.avatar),
         ),
         title: Text(
           _friendItem.friendName,

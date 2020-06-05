@@ -1,3 +1,5 @@
+import 'dart:io';
+
 class StreamSummaryItem {
   final String avatarPath;
   final String userName;
@@ -9,8 +11,8 @@ class StreamSummaryItem {
 }
 
 class FriendItem {
-  final String avatarPath;
+  final File avatar;
   final String friendName;
 
-  FriendItem({this.avatarPath, this.friendName});
+  FriendItem({this.avatar, this.friendName});
 }

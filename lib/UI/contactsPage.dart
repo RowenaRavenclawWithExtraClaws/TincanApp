@@ -17,7 +17,7 @@ class TincanContactsPage extends StatelessWidget {
           backgroundColor: Colors.white,
           leading: BackButton(
             color: Colors.deepPurple,
-            onPressed: Navigate.navigateBack(context),
+            onPressed: () => Navigate.navigateBack(context),
           ),
           title: Text(
             'Tincan',
@@ -31,16 +31,6 @@ class TincanContactsPage extends StatelessWidget {
               icon: Icon(Icons.search),
               color: Colors.deepPurple,
               onPressed: () => {},
-            ),
-            PopupMenuButton(
-              icon: Icon(
-                Icons.menu,
-                color: Colors.deepPurple,
-              ),
-              itemBuilder: (context) {
-                List<PopupMenuEntry> l = new List<PopupMenuEntry>();
-                return l;
-              },
             ),
           ],
         ),
@@ -58,6 +48,8 @@ class ContactsPage extends StatefulWidget {
 class _ContactsPageState extends State<ContactsPage> {
   @override
   Widget build(BuildContext context) {
-    return UIComposer.composeListWidget();
+    return Scaffold(
+      body: UIComposer.composeListWidget(),
+    );
   }
 }

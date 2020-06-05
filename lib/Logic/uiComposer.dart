@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ui/DataLayer/listItem.dart';
 import 'package:ui/Logic/local.dart';
-import 'package:ui/Logic/fileHandler.dart';
+import 'dart:io';
 import 'package:ui/UI/listItemView.dart';
 
 class UIComposer {
@@ -29,19 +29,24 @@ class UIComposer {
 
   static Widget composeListWidget() {
     List friendList = LocalQuery.getFriends();
+    FriendItem friendItem;
+    List friendItemList = [];
 
-    friendList = friendList
-        .map((friend) async => new FriendItem(
-            avatarPath: '${await FileHandler.localPath}/${friend.avatarPath}',
-            friendName: friend.name))
-        .toList();
+    friendList.forEach((friend) {
+      friendItem = new FriendItem(
+          avatar: File(
+              '/data/user/0/com.example.ui/app_flutter/${friend.avatarPath}'),
+          friendName: friend.name);
+
+      friendItemList.add(friendItem);
+    });
 
     return SafeArea(
       child: ListView.separated(
         itemCount: friendList.length,
         separatorBuilder: (BuildContext context, int index) => composeDivider(),
         itemBuilder: (BuildContext context, int index) {
-          return composeListItem(friendList[index], context);
+          return composeListItem(friendItemList[index], context);
         },
       ),
     );

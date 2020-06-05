@@ -85,7 +85,7 @@ class _HomePageState extends State<HomePage> {
         onTap: onItemTapped,
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: Navigate.navigateTo(context, TincanContactsPage()),
+        onPressed: () => Navigate.navigateTo(context, TincanContactsPage()),
       ),
       body: Scaffold(),
     );
