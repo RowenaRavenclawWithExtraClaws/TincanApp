@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui/Logic/navigate.dart';
+import 'package:ui/config.dart' as globals;
 
 class TincanRoomPage extends StatelessWidget {
   @override
@@ -21,12 +22,14 @@ class TincanRoomPage extends StatelessWidget {
           ),
           title: Row(
             children: <Widget>[
-              CircleAvatar(),
+              CircleAvatar(
+                backgroundImage: FileImage(globals.friendItem.avatar),
+              ),
               SizedBox(width: 8.0),
               Text(
-                'Mahammad',
+                globals.friendItem.friendName,
                 style: TextStyle(
-                  fontSize: 25.0,
+                  fontSize: 20.0,
                   color: Colors.deepPurple,
                 ),
               ),
