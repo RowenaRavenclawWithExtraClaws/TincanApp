@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ui/DataLayer/listItem.dart';
+import 'package:ui/Logic/navigate.dart';
+import 'package:ui/UI/roomPage.dart';
+import 'package:ui/config.dart' as globals;
 
 class FriendItemView {
   final Color textUnreadDeepPurpleColor = Colors.deepPurple;
@@ -12,16 +15,22 @@ class FriendItemView {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(4.0),
-      child: ListTile(
-        leading: CircleAvatar(
-          radius: 30.0,
-          backgroundImage: FileImage(_friendItem.avatar),
-        ),
-        title: Text(
-          _friendItem.friendName,
-          style: TextStyle(
-            fontSize: 18.0,
-            color: Colors.deepPurple,
+      child: GestureDetector(
+        onTap: () {
+          globals.friendItem = _friendItem;
+          Navigate.navigateTo(context, TincanRoomPage());
+        },
+        child: ListTile(
+          leading: CircleAvatar(
+            radius: 30.0,
+            backgroundImage: FileImage(_friendItem.avatar),
+          ),
+          title: Text(
+            _friendItem.friendName,
+            style: TextStyle(
+              fontSize: 18.0,
+              color: Colors.deepPurple,
+            ),
           ),
         ),
       ),
