@@ -1,4 +1,6 @@
 // all global variables should be stored here.
+import 'package:ui/DataLayer/listItem.dart';
+
 String phoneNumber = '';
 String canName = '';
 String avatar = '';
@@ -29,3 +31,4 @@ List<String> messeges = [
   'wrong verification code, try again',
   'your verification code will be resent shortly'
 ];
+FriendItem friendItem;
