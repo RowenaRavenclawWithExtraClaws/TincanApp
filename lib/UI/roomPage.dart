@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui/Logic/navigate.dart';
+import 'package:ui/Logic/uiComposer.dart';
 import 'package:ui/config.dart' as globals;
 
 class TincanRoomPage extends StatelessWidget {
@@ -93,6 +94,7 @@ class _RoomPageState extends State<RoomPage> {
                           hintText: 'Search a track',
                           border: InputBorder.none,
                         ),
+                        onChanged: (text) => {},
                       ),
                     ),
                   ],
