@@ -49,7 +49,7 @@ class _ContactsPageState extends State<ContactsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: UIComposer.composeListWidget(),
+      body: UIComposer.composeFriendListWidget(),
     );
   }
 }
