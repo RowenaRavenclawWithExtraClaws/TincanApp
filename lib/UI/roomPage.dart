@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui/Logic/navigate.dart';
-import 'package:ui/Logic/uiComposer.dart';
+import 'package:ui/UI/tracksPage.dart';
 import 'package:ui/config.dart' as globals;
 
 class TincanRoomPage extends StatelessWidget {
@@ -104,7 +104,7 @@ class _RoomPageState extends State<RoomPage> {
                 width: 5.0,
               ),
               GestureDetector(
-                onTap: () => {},
+                onTap: () => Navigate.navigateTo(context, TincanTracksPage()),
                 child: CircleAvatar(
                   child: Icon(Icons.add),
                 ),
