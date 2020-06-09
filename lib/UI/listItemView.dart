@@ -37,6 +37,40 @@ class FriendItemView {
     );
   }
 }
+
+class TrackItemView {
+  final Color textUnreadDeepPurpleColor = Colors.deepPurple;
+  TrackItem _trackItem;
+
+  TrackItemView(TrackItem trackItem) {
+    _trackItem = trackItem;
+  }
+
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(4.0),
+      child: GestureDetector(
+        onTap: () => {},
+        child: ListTile(
+          title: Text(
+            _trackItem.trackName,
+            style: TextStyle(
+              fontSize: 18.0,
+              color: Colors.deepPurple,
+            ),
+          ),
+          subtitle: Text(
+            _trackItem.artistName,
+            style: TextStyle(
+              fontSize: 16.0,
+              color: Colors.deepPurple,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
 /*class ChatSummaryView extends StatelessWidget {
   final Color textUnreadDeepPurpleColor = Colors.deepPurple;
 
