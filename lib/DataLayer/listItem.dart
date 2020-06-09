@@ -16,3 +16,11 @@ class FriendItem {
 
   FriendItem({this.avatar, this.friendName});
 }
+
+class TrackItem {
+  final File artwork;
+  final String trackName;
+  final String artistName;
+
+  TrackItem({this.artwork, this.trackName, this.artistName});
+}
