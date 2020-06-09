@@ -1,5 +1,6 @@
 // all global variables should be stored here.
 import 'package:ui/DataLayer/listItem.dart';
+import 'package:ui/Logic/audio.dart';
 
 String phoneNumber = '';
 String canName = '';
@@ -32,3 +33,4 @@ List<String> messeges = [
   'your verification code will be resent shortly'
 ];
 FriendItem friendItem;
+Audio audio;
