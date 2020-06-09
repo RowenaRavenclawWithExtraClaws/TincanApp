@@ -3,6 +3,7 @@ import 'package:ui/DataLayer/listItem.dart';
 import 'package:ui/Logic/local.dart';
 import 'dart:io';
 import 'package:ui/UI/listItemView.dart';
+import 'package:ui/config.dart' as globals;
 
 class UIComposer {
   static void composeSnackBar(String messege, BuildContext context) {
@@ -12,11 +13,20 @@ class UIComposer {
     ));
   }
 
-  static Widget composeListItem(FriendItem friendItem, BuildContext context) {
+  static Widget composeFriendListItem(
+      FriendItem friendItem, BuildContext context) {
     FriendItemView friendItemView = new FriendItemView(friendItem);
     Widget friendView = friendItemView.build(context);
 
     return friendView;
+  }
+
+  static Widget composeTrackListItem(
+      TrackItem trackItem, BuildContext context) {
+    TrackItemView trackItemView = new TrackItemView(trackItem);
+    Widget trackView = trackItemView.build(context);
+
+    return trackView;
   }
 
   static Widget composeDivider() {
@@ -27,7 +37,7 @@ class UIComposer {
     );
   }
 
-  static Widget composeListWidget() {
+  static Widget composeFriendListWidget() {
     List friendList = LocalQuery.getFriends();
     FriendItem friendItem;
     List friendItemList = [];
@@ -46,7 +56,21 @@ class UIComposer {
         itemCount: friendList.length,
         separatorBuilder: (BuildContext context, int index) => composeDivider(),
         itemBuilder: (BuildContext context, int index) {
-          return composeListItem(friendItemList[index], context);
+          return composeFriendListItem(friendItemList[index], context);
+        },
+      ),
+    );
+  }
+
+  static Widget composeTrackListWidget() {
+    List<TrackItem> trackList = globals.audio.getTrackItemList();
+
+    return SafeArea(
+      child: ListView.separated(
+        itemCount: trackList.length,
+        separatorBuilder: (BuildContext context, int index) => composeDivider(),
+        itemBuilder: (BuildContext context, int index) {
+          return composeTrackListItem(trackList[index], context);
         },
       ),
     );
