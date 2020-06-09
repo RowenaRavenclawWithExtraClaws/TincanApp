@@ -5,6 +5,8 @@ import 'package:hive/hive.dart';
 import 'package:ui/DataLayer/user.dart';
 import 'package:ui/DataLayer/friend.dart';
 import 'package:ui/DataLayer/track.dart';
+import 'package:ui/Logic/audio.dart';
+import 'package:ui/config.dart' as globals;
 
 void main() async {
   runApp(TincanHomePage());
@@ -19,4 +21,7 @@ void main() async {
 
   FileHandler.createDir('avatars');
   FileHandler.createDir('avatars/users');
+
+  if (globals.audio == null) globals.audio = new Audio();
+  await globals.audio.setTracks();
 }
