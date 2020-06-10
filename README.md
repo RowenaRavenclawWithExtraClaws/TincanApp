@@ -1,16 +1,5 @@
-# ui
+# Tincan Mobile App for Android and iOS
 
-A new Flutter project.
+This a mobile app that let you play your music from local storage with your loved ones at the same time, enables you to experience the atmosphere of fondness from far away.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The app is under development write now, feel free to contribute.
